@@ -13,13 +13,13 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render "new"
+      render "cocktails/show"
     end
   end
 
   def destroy
     @dose.destroy
-    redirect_to dose_path
+    redirect_to cocktail_path(@dose.cocktail)
   end
 
   private
